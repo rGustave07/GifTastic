@@ -24,7 +24,8 @@ $('#gifBoxHolder').on('click', function(event) {
     for ( var i = 0; i < gifsArr.length; i++){
       var newGif = gifsArr[i].images.downsized;
       console.log(newGif);
-      $("#actualGifHolder").append('<img height='+newGif.height+ 'width=' + newGif.width + ' src=' + newGif.url +'>');
+      // $("#actualGifHolder").append('<img height='+newGif.height+ 'width=' + newGif.width + ' src=' + newGif.url +'>');
+      $("#actualGifHolder").append('<img height= 200px; '+ 'width=200px' + ' src=' + newGif.url +'>');
     };
   });
 });
