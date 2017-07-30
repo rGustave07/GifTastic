@@ -1,7 +1,9 @@
 
 var topics = ["games", "movies", "reactions", "coding"];
 function renderBtns(){
-  $('gifBoxHolder').empty();
+  $('#gifBoxHolder').empty();
+  $('#searchButton').val("Let's Go!");
+  $('#addGif').text("");
   for ( var i = 0; i < topics.length; i++ ){
     $('#gifBoxHolder').append("<button>" + topics[i] + "</button>");
   }
@@ -35,6 +37,7 @@ $('#searchButton').on('click', function(){
   $('#gifBoxHolder').empty();
   topics.push($('#addGif').val());
   renderBtns();
+  $('#addGif').val("");
 });
 
 renderBtns();
