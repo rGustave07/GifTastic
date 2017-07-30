@@ -15,7 +15,7 @@ $('#gifBoxHolder').on('click', function(event) {
   var queryURL = "https://api.giphy.com/v1/gifs/search?q=";
 
   $.ajax({
-    url: queryURL + usrInput + "&api_key=" + APIkey + "&limit=10",
+    url: queryURL + usrInput + "&api_key=" + APIkey + "&limit=25",
     method: "GET"
   }).done( function(response){
     var gifsArr = response.data;
