@@ -5,19 +5,27 @@
     <title>GifTastic: Cathy is Cute edition.</title>
     <!-- Linking CSS -->
     <link rel="stylesheet" href="assets/style.css">
+    <!-- link google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   </head>
   <body>
-    <h1>Pick-a-GIF: Cathy is cute edition</h1>
-    <h3>Search a GIF and the box will appear in the following</h3>
+    <header>
+      <h1>Pick-a-GIF</h1>
+      <h3>Search a GIF and the box will appear in the following</h3>
+    </header>
     <div id="gifBoxHolder">
     </div>
     <form>
-      <label>Search GIPHY</label>
-      <input id="addGif" type="text">
+      <div>
+      <input id="addGif" type="text" placeholder="Search for GIF">
       <input type="submit" id="searchButton">
+      </div>
     </form>
     <div id="actualGifHolder">
     </div>
+    <footer>
+      	Ritter Gustave	&copy;
+    </footer>
 
   <!-- Linking jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
