@@ -1,17 +1,22 @@
 
-var topics = ["games", "movies", "reactions", "coding"];
-var saveArr = [];
+var topics = ["coding"];
+topics = JSON.parse(localStorage.getItem('save')) || [];
 
 function renderBtns(){
   $('#gifBoxHolder').empty();
   $('#searchButton').val("Let's Go!");
   $('#addGif').text("");
-  console.log(saveArr);
   for ( var i = 0; i < topics.length; i++ ){
     $('#gifBoxHolder').append("<button>" + topics[i] + "</button>");
   }
-}
+};
 
+// function saveButtons(currentArr){
+//   localStorage.setItem('save', JSON.stringify(currentArr));
+//   saveArr = JSON.parse(localStorage.getItem('save'));
+// };
+
+// Ajax Call
 $('#gifBoxHolder').on('click', function(event) {
   $('#actualGifHolder').empty();
   var usrInput = event.target.innerText;
@@ -36,16 +41,10 @@ $('#gifBoxHolder').on('click', function(event) {
 });
 
 $('#searchButton').on('click', function(){
-  //When user clicks search button
-  //Prevent default behavior empty the buttons add the search value
-  //to the topics array
   event.preventDefault();
   $('#gifBoxHolder').empty();
   topics.push($('#addGif').val());
-  //save topics in local storage
-  localStorage.setItem( 'savedTopics', JSON.stringify(topics) );
-  var save = localStorage.getItem('savedTopics');
-  saveArr = JSON.parse(save);
+  localStorage.setItem('save', JSON.stringify(topics));
   renderBtns();
   $('#addGif').val("");
 });
